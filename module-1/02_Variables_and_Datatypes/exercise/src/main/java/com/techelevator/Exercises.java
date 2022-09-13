@@ -26,17 +26,26 @@ public class Exercises {
         3. 3 raccoons are playing in the woods. 2 go home to eat dinner. How
         many raccoons are left in the woods?
         */
-
+		int raccoonsInWoods = 3;
+		int raccoonsLeave = 2;
+		int remainingRaccoons = raccoonsInWoods - raccoonsLeave;
 
         /* Exercise 4
         4. There are 5 flowers and 3 bees. How many less bees than flowers?
+
         */
+		int numberOfFlowers = 5;
+		int numberOfBees = 3;
+		int remainingBees = numberOfFlowers - numberOfBees;
 
 
         /* Exercise 5
         5. 1 lonely pigeon was eating breadcrumbs. Another pigeon came to eat
         breadcrumbs, too. How many pigeons are eating breadcrumbs now?
         */
+		int oneLonelyPigeon = 1;
+		int oneEatingPigeon = 1;
+		int eatingBreadcrumbs = oneLonelyPigeon + oneEatingPigeon;
 
 
         /* Exercise 6
@@ -44,29 +53,47 @@ public class Exercises {
         owls are on the fence now?
         */
 
+		int owlsChilling = 3;
+		int owlsComingToChill = 2;
+		int theFence = owlsChilling + owlsComingToChill;
 
         /* Exercise 7
         7. 2 beavers were working on their home. 1 went for a swim. How many
         beavers are still working on their home?
         */
+		int beaversBeingBusy = 2;
+		int beaversWetSwimming = 1;
+		int beaversStillAtHome = beaversBeingBusy - beaversWetSwimming;
 
 
         /* Exercise 8
         8. 2 toucans are sitting on a tree limb. 1 more toucan joins them. How
         many toucans in all?
         */
+		int toucansOnBranch = 2;
+		int toucansFlying = 1;
+		int toucansOnTreeLimb = toucansOnBranch + toucansFlying;
 
 
         /* Exercise 9
         9. There are 4 squirrels in a tree with 2 nuts. How many more squirrels
         are there than nuts?
         */
+		int squirrelsInTree = 4;
+		int nutsHangingInTree = 2;
+		int nutlessSquirrels = squirrelsInTree - nutsHangingInTree;
 
 
         /* Exercise 10
         10. Mrs. Hilt found a quarter, 1 dime, and 2 nickels. How much money did
         she find?
         */
+		double valueOfQuarters = .25;
+		double valueOfDimes = .10;
+		double valueOfNickels = .10;
+		double totalMoney = valueOfQuarters + valueOfDimes + valueOfNickels;
+
+
 
 
         /* Exercise 11
@@ -75,12 +102,18 @@ public class Exercises {
         Mrs. Flannery's class bakes 17 muffins. How many muffins does first
         grade bake in all?
         */
-
+		int mrsBriersBakingMuffins = 18;
+		int mrsMacAdamsBakingMuffins = 20;
+		int mrsFlanneryBakingMuffins = 17;
+		int totalNumberofBakedMuffins = mrsBriersBakingMuffins + mrsFlanneryBakingMuffins + mrsMacAdamsBakingMuffins;
 
         /* Exercise 12
         12. Mrs. Hilt bought a yoyo for 24 cents and a whistle for 14 cents. How
         much did she spend in all for the two toys?
         */
+		double valueOfYoYo = .24;
+		double valueOfWhistle = .14;
+		double totalSpent = valueOfYoYo + valueOfWhistle;
 
 
         /* Exercise 13
@@ -88,13 +121,16 @@ public class Exercises {
         and 10 mini marshmallows.How many marshmallows did she use
         altogether?
         */
-
+		int largeMarshmallows = 8;
+		int miniMarshmallows = 10;
+		int totalNumberOfMarshmallows = miniMarshmallows + largeMarshmallows;
 
         /* Exercise 14
         14. At Mrs. Hilt's house, there was 29 inches of snow, and Brecknock
         Elementary School received 17 inches of snow. How much more snow
         did Mrs. Hilt's house have?
         */
+
 
 
         /* Exercise 15
@@ -329,10 +365,10 @@ public class Exercises {
 	    /* Exercise 51
 	    51. Bill and Jill are house painters. Bill can paint a standard room in 2.15 hours, while Jill averages
 	    1.90 hours. How long will it take the two painters working together to paint 5 standard rooms?
-	    Hint: Calculate the rate at which each painter can complete a room (rooms / hour), combine those rates, 
+	    Hint: Calculate the rate at which each painter can complete a room (rooms / hour), combine those rates,
 	    and then divide the total number of rooms to be painted by the combined rate.
 	    */
-     
+
 
 	    /* Exercise 52
 	    52. Create and assign variables to hold a first name, last name, and middle initial. Using concatenation,
