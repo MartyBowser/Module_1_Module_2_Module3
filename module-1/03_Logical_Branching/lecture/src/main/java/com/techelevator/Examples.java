@@ -7,7 +7,7 @@ public class Examples {
 		// declaration statement for a variable named "result" of type boolean
 		boolean result;
 
-		System.out.println("****************************");
+		System.out.println("**************************scr**");
 		System.out.println("*** COMPARISON OPERATORS ***");
 		System.out.println("****************************");
 		System.out.println();
