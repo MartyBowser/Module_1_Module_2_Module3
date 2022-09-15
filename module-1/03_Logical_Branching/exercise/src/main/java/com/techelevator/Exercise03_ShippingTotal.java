@@ -22,7 +22,27 @@ public class Exercise03_ShippingTotal {
     calculateShippingTotal(45) ➔ 23.75
      */
     public double calculateShippingTotal(int weightPounds) {
-        return 0;
+
+        double shippingCharge = 0;
+
+        //check if weightPounds is over 40 pounds
+        if (weightPounds >= MAX_WEIGHT_POUNDS) {
+            // if so, calculate initial weight by multiplying 40 *.5
+            double initialCost = UP_TO_40_LB_RATE * MAX_WEIGHT_POUNDS;
+
+            //calculate how many pounds over 40 we are
+            double additionalWeight = weightPounds - MAX_WEIGHT_POUNDS;
+            // then add .75 for each additional pound
+            double additionalCost = additionalWeight * OVER_40_LB_RATE;
+            shippingCharge = initialCost + additionalCost;
+            // check if weightPounds is under 40
+        }else {
+            //  create a variable calculating charge under 40
+           shippingCharge  = UP_TO_40_LB_RATE * weightPounds;
+
+            //  by weightPounds *.5
+        }
+        return shippingCharge;
     }
 
     /*
