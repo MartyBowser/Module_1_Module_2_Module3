@@ -36,9 +36,9 @@ public class Exercise03_ShippingTotal {
             double additionalCost = additionalWeight * OVER_40_LB_RATE;
             shippingCharge = initialCost + additionalCost;
             // check if weightPounds is under 40
-        }else {
+        } else {
             //  create a variable calculating charge under 40
-           shippingCharge  = UP_TO_40_LB_RATE * weightPounds;
+            shippingCharge = UP_TO_40_LB_RATE * weightPounds;
 
             //  by weightPounds *.5
         }
@@ -58,7 +58,51 @@ public class Exercise03_ShippingTotal {
     calculateShippingTotal(45, true) ➔ 21.375
      */
     public double calculateShippingTotal(int weightPounds, boolean hasDiscount) {
-        return 0;
+        double shippingCharge = 0;
+        if (hasDiscount == false) {
+
+            //check if weightPounds is over 40 pounds
+            if (weightPounds >= MAX_WEIGHT_POUNDS) {
+                // if so, calculate initial weight by multiplying 40 *.5
+                double initialCost = UP_TO_40_LB_RATE * MAX_WEIGHT_POUNDS;
+
+                //calculate how many pounds over 40 we are
+                double additionalWeight = weightPounds - MAX_WEIGHT_POUNDS;
+                // then add .75 for each additional pound
+                double additionalCost = additionalWeight * OVER_40_LB_RATE;
+                shippingCharge = initialCost + additionalCost;
+                // check if weightPounds is under 40
+            } else {
+                //  create a variable calculating charge under 40
+                shippingCharge = UP_TO_40_LB_RATE * weightPounds;
+
+                //  by weightPounds *.5
+            }
+
+        } else if (hasDiscount == true) {
+
+            //check if weightPounds is over 40 pounds
+            if (weightPounds >= MAX_WEIGHT_POUNDS) {
+                // if so, calculate initial weight by multiplying 40 *.5
+                double initialCost = UP_TO_40_LB_RATE * MAX_WEIGHT_POUNDS;
+
+                //calculate how many pounds over 40 we are
+                double additionalWeight = weightPounds - MAX_WEIGHT_POUNDS;
+                // then add .75 for each additional pound
+                double additionalCost = additionalWeight * OVER_40_LB_RATE;
+                shippingCharge = initialCost + additionalCost;
+                // check if weightPounds is under 40
+            } else {
+                //  create a variable calculating charge under 40
+                shippingCharge = UP_TO_40_LB_RATE * weightPounds;
+
+                //  by weightPounds *.5
+            }
+            shippingCharge = shippingCharge - (shippingCharge * .10);
+        }
+
+
+        return shippingCharge;
     }
 
     /*
@@ -73,6 +117,25 @@ public class Exercise03_ShippingTotal {
     calculateShippingTotal(45, 0.2) ➔ 19.0
      */
     public double calculateShippingTotal(int weightPounds, double discountPercentage) {
-        return 0;
+
+        double shippingCharge = 0;
+
+        if (weightPounds >= MAX_WEIGHT_POUNDS) {
+
+            double initialCost = (MAX_WEIGHT_POUNDS * UP_TO_40_LB_RATE);
+            double additionalWeight = weightPounds - MAX_WEIGHT_POUNDS;
+            double additionalCost = additionalWeight * OVER_40_LB_RATE;
+
+            shippingCharge = initialCost + additionalCost;
+
+        } else if (weightPounds < MAX_WEIGHT_POUNDS) {
+            shippingCharge = weightPounds * UP_TO_40_LB_RATE;
+        }
+        if (discountPercentage > 0) {
+            return shippingCharge - (shippingCharge * discountPercentage);
+
+        }
+        return shippingCharge;
     }
 }
+

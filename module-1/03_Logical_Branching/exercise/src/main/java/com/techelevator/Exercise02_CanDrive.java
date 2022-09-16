@@ -21,7 +21,19 @@ public class Exercise02_CanDrive {
     canDrive(false, false) ➔ false
      */
     public boolean canDrive(boolean hasPermit, boolean withLicensedPassenger) {
+        //person can drive
+
+        // if they have a permit
+        if (hasPermit && withLicensedPassenger == true){
+            return true;
+        }
+        else if (hasPermit || withLicensedPassenger == false){
+            return false;
+        }
+        //if they are with licensed passenger
         return false;
+
+
     }
 
     /*
@@ -34,7 +46,11 @@ public class Exercise02_CanDrive {
     canDrive(false, true, 23) ➔ false
      */
     public boolean canDrive(boolean hasPermit, boolean withLicensedPassenger, int passengerAge) {
-        return false;
+        if (hasPermit && withLicensedPassenger && passengerAge >= 21) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /*
@@ -48,6 +64,15 @@ public class Exercise02_CanDrive {
     canDrive(false, true, 23, true) ➔ false
      */
     public boolean canDrive(boolean hasPermit, boolean withLicensedPassenger, int passengerAge, boolean isPassengerOurGuardian) {
-        return false;
+        if(hasPermit && withLicensedPassenger && passengerAge >=18 && isPassengerOurGuardian ) {
+            return true;
+        }
+
+        if(hasPermit && withLicensedPassenger && passengerAge >=21) {
+            return true;
+        } else{
+
+            return false;
+        }
     }
 }
