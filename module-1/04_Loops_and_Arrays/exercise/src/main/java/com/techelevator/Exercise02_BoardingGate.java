@@ -74,15 +74,30 @@ public class Exercise02_BoardingGate {
     Each row has three seats and a row is at full occupancy if all three seats have someone sitting in them.
 
     Using the boolean array, implement the logic to count the number of full rows on the plane.
-    Note: A new row starts at every third element. For example, row one begins with index 0, row two begins with index 3, and so on.
+    Note: A new row starts at every third element.
+    For example, row one begins with index 0, row two begins with index 3, and so on.
 
     Examples:
     getNumberOfFullRows([false, false, false, true, true, true]) → 1
     getNumberOfFullRows([true, true, true, true, true, true]) → 2
     getNumberOfFullRows([false, true, true, false, true, true]) → 0
      */
-        public int getNumberOfFullRows ( boolean[] seatingChart){
-            return 0;
+        public int getNumberOfFullRows ( boolean[] seatingChart) {
+
+           int numberOfRows = 0;
+          boolean isRowEmpty = false;
+           for( int i = 0; i < seatingChart.length; i++) {
+               if(seatingChart[i] == true) {
+                    isRowEmpty = true;
+
+                }
+                if(isRowEmpty == false && i % 3 == 0) {
+                    numberOfRows += 1;
+                    isRowEmpty = false;
+                    }
+           }
+            return numberOfRows;
         }
+
 
 }

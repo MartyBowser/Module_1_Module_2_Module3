@@ -17,7 +17,7 @@ public class Exercise03_Shirts {
     buildOrder() → ['S', 'S', 'S', 'M', 'M', 'L']
      */
     public char[] buildOrder() {
-        return new char[]{};
+        return new char[]{'S','S','S','M','M','L'};
     }
 
     /*
@@ -72,7 +72,14 @@ public class Exercise03_Shirts {
     placeRequest([]) → false
      */
 
-      public boolean placeRequest(char[] order) {return false;}
+      public boolean placeRequest(char[] order) {
+          for(int i=0; i < order.length; i++ ){
+              if(order[i]=='S'){
+                  return true;
+              }
+          }
+          return false;
+      }
 
         }
 
