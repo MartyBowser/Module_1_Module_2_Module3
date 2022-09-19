@@ -8,13 +8,15 @@ public class Lecture {
 		1. Create a variable to hold an int and call it numberOfExercises.
 			Then set it to 26.
 		*/
-
-		//System.out.println(numberOfExercises);
+int numberOfExercises = 26;
+		System.out.println(half);
 
 		/*
 		2. Create a variable to hold a double and call it half.
 			Set it to 0.5.
 		*/
+		double half = 0.5;
+		System.out.println(half);
 
 		//System.out.println(half);
 
@@ -22,6 +24,7 @@ public class Lecture {
 		3. Create a variable to hold a String and call it name.
 			Set it to "TechElevator".
 		*/
+		String name = "Tech Elevator"
 
 		//System.out.println(name);
 
@@ -44,12 +47,12 @@ public class Lecture {
 		//System.out.println(pi);
 
 		/*
-		7. Create and set a variable that holds your name.
+		7. Create a set a variable that holds your name.
 		*/
 
 		/*
 		8. Create and set a variable that holds the number of buttons on your mouse.
-		*/
+		*/int buttons
 
 		/*
 		9. Create and set a variable that holds the percentage of battery left on

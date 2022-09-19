@@ -22,6 +22,39 @@ public class Lecture {
 		System.out.println("******************************");
 		System.out.println();
 
+		String cat = "Salem";
+		boolean endsWithM = cat.endsWith("m");
+		System.out.println("Does Salem end with a m? " + endsWithM);
+
+		boolean endsWithT = cat.endsWith("t");
+		System.out.println("Does Salem end with a t? " + endsWithT);
+
+		boolean startsWithSa = cat.startsWith("sa");
+		System.out.println("Does Salem end with a sa? " + startsWithSa);
+
+		String city = "Cincinnati";
+
+		int lastIndexOfN = city.lastIndexOf( "n" );
+		System.out.println("last index of n is " + lastIndexOfN);
+		System.out.println( city + " is " + city.length() + " characters long");
+
+		String first3 = city.substring(0,3);
+		System.out.println("The first 3 letters are " + first3);
+
+		String everythingAfterIndex = city.substring(lastIndexOfN);
+		System.out.println("Everything after index: " + everythingAfterIndex);
+
+		//Spaces count as well
+		String nameWithSpaces = " Joe ";
+		System.out.println("NameWithSpaces is " + nameWithSpaces.length());
+
+		//System.out.println("City in all caps: " + city.toUpperCase);
+
+		//Spaces count as well
+		String namesWithSpaces = " Joe ";
+		System.out.println("NameWithSpaces length is " + namesWithSpaces.length());
+
+
 
 		/* Other commonly used methods:
 		 *
