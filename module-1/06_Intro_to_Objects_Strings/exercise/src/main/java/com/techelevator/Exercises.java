@@ -21,7 +21,7 @@ public class Exercises {
 	 makeAbba("What", "Up") → "WhatUpUpWhat"
 	 */
 	public String makeAbba(String a, String b) {
-		return a+b+b+a;
+		return a + b + b + a;
 	}
 
 	/*
@@ -34,7 +34,7 @@ public class Exercises {
 	 */
 	public String makeTags(String tag, String word) {
 
-		String result = "<" + tag + ">" + word +"</" + tag + ">";
+		String result = "<" + tag + ">" + word + "</" + tag + ">";
 		return result;
 	}
 
@@ -80,7 +80,7 @@ public class Exercises {
 	 firstHalf("abcdef") → "abc"
 	 */
 	public String firstHalf(String str) {
-		return str.substring(0, str.length()/2);
+		return str.substring(0, str.length() / 2);
 	}
 
 	/*
@@ -91,8 +91,9 @@ public class Exercises {
 	 withoutEnd("coding") → "odin"
 	 */
 	public String withoutEnd(String str) {
-		return str.substring(1, str.length()-1);
+		return str.substring(1, str.length() - 1);
 	}
+
 	/*
 	 Given 2 strings, a and b, return a string of the form short+long+short, with the shorter string
 	 on the outside and the longer string on the inside. The strings will not be the same length, but
@@ -130,7 +131,7 @@ public class Exercises {
 	 left2("Hi") → "Hi"
 	 */
 	public String left2(String str) {
-		return str.substring(2) + str.substring(0,2);
+		return str.substring(2) + str.substring(0, 2);
 	}
 
 	/*
@@ -141,7 +142,7 @@ public class Exercises {
 	 right2("Hi") → "Hi"
 	 */
 	public String right2(String str) {
-		return str.substring (str.length()-2) + str.substring(0, str.length()-2);
+		return str.substring(str.length() - 2) + str.substring(0, str.length() - 2);
 	}
 
 	/*
@@ -323,9 +324,20 @@ public class Exercises {
 	 altPairs("CodingHorror") → "Congrr"
 	 */
 	public String altPairs(String str) {
-		return null;
-	}
+		String everyOtherPair = "";
+		//I want to take the first two indexes, then skip the next two, and repeat
+		for (int i = 0; i < str.length(); i += 4) {
 
+			everyOtherPair += str.charAt(i);
+
+
+			if (i + 1 < str.length()) {
+				everyOtherPair += str.charAt(i + 1);
+
+			}
+		}	return everyOtherPair;
+
+}
 	/*
 	 Suppose the string "yak" is unlucky. Given a string, return a version where all the "yak" are removed.
 	 The "yak" strings will not overlap.
