@@ -16,8 +16,14 @@ public class Exercises {
 	 array2List( {"Left", "Right", "Forward", "Back"} )  ->  ["Left", "Right", "Forward", "Back"]
 	 */
 	public List<String> array2List(String[] stringArray) {
-		return null;
+		List<String> newList = new ArrayList<>();
+		for (String str : stringArray) {
+			newList.add(str);
+
+		}
+		return newList;
 	}
+
 
 	/*
 	 Given a list of Strings, return an array containing the same Strings in the same order
@@ -37,9 +43,24 @@ public class Exercises {
 	 no4LetterWords( {"Jack", "Jill", "Jane", "John", "Jim"} )  ->  ["Jim"]
 	 */
 	public List<String> no4LetterWords(String[] stringArray) {
-		return null;
-	}
 
+		List<String> no4 = new ArrayList<>();
+
+		// for loop to go through each value
+		for (String fourWords : stringArray) {
+
+			//check to make sure if not 4 letters
+		if(fourWords.length() !=4) {
+
+			no4.add(fourWords);
+		}
+
+		//add value from array to list
+
+		}
+		return no4;
+
+}
 	/*
 	 Given an array of ints, divide each int by 2, and return an ArrayList of Doubles.
 	 arrayInt2ListDouble( {5, 8, 11, 200, 97} ) -> [2.5, 4.0, 5.5, 100, 48.5]
