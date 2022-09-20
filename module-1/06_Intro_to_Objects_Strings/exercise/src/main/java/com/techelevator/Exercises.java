@@ -47,7 +47,7 @@ public class Exercises {
 	 makeOutWord("[[]]", "word") → "[[word]]"
 	 */
 	public String makeOutWord(String out, String word) {
-		return null;
+		return out.substring(0, 2) + word + out.substring(2);
 	}
 
 	/*
@@ -58,7 +58,8 @@ public class Exercises {
 	 extraEnd("Hi") → "HiHiHi"
 	 */
 	public String extraEnd(String str) {
-		return null;
+
+		return str.substring(str.length() - 2) + str.substring(str.length() - 2) + str.substring(str.length() - 2);
 	}
 
 	/*
@@ -70,8 +71,14 @@ public class Exercises {
 	 firstTwo("ab") → "ab"
 	 */
 	public String firstTwo(String str) {
-		return null;
+		if (str.length() > 2) {
+			String begin = str.substring(0, 2);
+
+			return begin;
+		}
+		return str;
 	}
+
 
 	/*
 	 Given a string of even length, return the first half. So the string "WooHoo" yields "Woo".
@@ -80,6 +87,7 @@ public class Exercises {
 	 firstHalf("abcdef") → "abc"
 	 */
 	public String firstHalf(String str) {
+
 		return str.substring(0, str.length() / 2);
 	}
 
@@ -120,7 +128,7 @@ public class Exercises {
 	 */
 	public String nonStart(String a, String b) {
 
-		return null;
+		return a.substring(1) + b.substring(1);
 	}
 
 	/*
@@ -153,10 +161,17 @@ public class Exercises {
 	 theEnd("oh", true) → "o"
 	 */
 	public String theEnd(String str, boolean front) {
-		return null;
+		if (front) {
+
+			return str.substring(0, 1);
+		} else {
+			return str.substring(str.length() - 1);
+		}
 	}
 
+
 	/*
+
 	 Given a string, return a version without both the first and last char of the string. The string
 	 may be any length, including 0.
 	 withoutEnd2("Hello") → "ell"
@@ -262,7 +277,17 @@ public class Exercises {
 	 countXX("xxxx") →
 	 */
 	public int countXX(String str) {
-		return 0;
+
+		int numberz = 0;
+
+		for (int i = 0; i < str.length() - 1; i++) {
+
+			if (str.substring(i, i + 2).equals("xx")) {
+
+				numberz++;
+			}
+		}
+		return numberz;
 	}
 
 	/*
@@ -335,9 +360,11 @@ public class Exercises {
 				everyOtherPair += str.charAt(i + 1);
 
 			}
-		}	return everyOtherPair;
+		}
+		return everyOtherPair;
 
-}
+	}
+
 	/*
 	 Suppose the string "yak" is unlucky. Given a string, return a version where all the "yak" are removed.
 	 The "yak" strings will not overlap.
@@ -346,7 +373,9 @@ public class Exercises {
 	 stringYak("yak123ya") → "123ya"
 	 */
 	public String stringYak(String str) {
-		return null;
-	}
 
-}
+		return str.replace("yak", "");
+
+
+		}
+	}
