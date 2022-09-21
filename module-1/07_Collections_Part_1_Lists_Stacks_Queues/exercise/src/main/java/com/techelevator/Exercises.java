@@ -16,12 +16,12 @@ public class Exercises {
 	 array2List( {"Left", "Right", "Forward", "Back"} )  ->  ["Left", "Right", "Forward", "Back"]
 	 */
 	public List<String> array2List(String[] stringArray) {
-		List<String> newList = new ArrayList<>();
+		List<String> newSwag = new ArrayList<>();
 		for (String str : stringArray) {
-			newList.add(str);
+			newSwag.add(str);
 
 		}
-		return newList;
+		return newSwag;
 	}
 
 
@@ -32,7 +32,8 @@ public class Exercises {
 	 list2Array( ["Left", "Right", "Forward", "Back"] )  ->  {"Left", "Right", "Forward", "Back"}
 	 */
 	public String[] list2Array(List<String> stringList) {
-		return null;
+		String[] brandArray = stringList.toArray(new String[0]);
+		return brandArray;
 	}
 
 	/*
@@ -68,7 +69,11 @@ public class Exercises {
 	 arrayInt2ListDouble( {84, 99, 3285, 13, 877} ) -> [42, 49.5, 1642.5, 6.5, 438.5]
 	 */
 	public List<Double> arrayInt2ListDouble(int[] intArray) {
-		return null;
+		List<Double> arraydouble = new ArrayList<>();
+
+		for (int i = 0; i < intArray.length; i++)
+	arraydouble.add((double)intArray[i]/2);
+			return arraydouble;
 	}
 
 	/*
@@ -88,9 +93,17 @@ public class Exercises {
 	 oddOnly( {734, 233, 782, 811, 3, 9999} ) -> [233, 811, 3, 9999]
 	 */
 	public List<Integer> oddOnly(Integer[] integerArray) {
-		return null;
-	}
+		List<Integer> wallyWorld = new ArrayList<>();
 
+		for (int i = 0; i < integerArray.length; i++) {
+			if (integerArray[i] % 2 != 0) {
+				wallyWorld.add(integerArray[i]);
+
+			}
+		}
+		return  wallyWorld;
+
+	}
 	/*
 	 Given a List of Integers, and an int value, return true if the int value appears two or more times in
 	 the list.
@@ -98,7 +111,22 @@ public class Exercises {
 	 foundIntTwice( [6, 8, 10, 11, 13], 8 -> false
 	 foundIntTwice( [9, 9, 44, 2, 88, 9], 9) -> true
 	 */
-	public boolean foundIntTwice(List<Integer> integerList, int intToFind) {
+	public boolean foundIntTwice(List<Integer> integerList, int intToFind)
+	{
+		int count = 0;
+		for(int i =0; i < integerList.size(); i++) {
+			if (intergerList.get(1))
+
+				count++;
+		}
+		 if(count > 1);
+		 return true;
+		 else
+			 return false;
+
+
+
+
 		return false;
 	}
 
