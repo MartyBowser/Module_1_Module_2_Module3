@@ -32,8 +32,8 @@ public class Exercises {
 	 list2Array( ["Left", "Right", "Forward", "Back"] )  ->  {"Left", "Right", "Forward", "Back"}
 	 */
 	public String[] list2Array(List<String> stringList) {
-		String[] brandArray = stringList.toArray(new String[0]);
-		return brandArray;
+		String[] newNew = stringList.toArray(new String[0]);
+		return newNew;
 	}
 
 	/*
@@ -69,11 +69,11 @@ public class Exercises {
 	 arrayInt2ListDouble( {84, 99, 3285, 13, 877} ) -> [42, 49.5, 1642.5, 6.5, 438.5]
 	 */
 	public List<Double> arrayInt2ListDouble(int[] intArray) {
-		List<Double> arraydouble = new ArrayList<>();
+		List<Double> teamRocket = new ArrayList<>();
 
 		for (int i = 0; i < intArray.length; i++)
-	arraydouble.add((double)intArray[i]/2);
-			return arraydouble;
+	teamRocket.add((double)intArray[i]/2);
+			return teamRocket;
 	}
 
 	/*
@@ -113,13 +113,14 @@ public class Exercises {
 	 */
 	public boolean foundIntTwice(List<Integer> integerList, int intToFind)
 	{
-		int count = 0;
+		int countDracula = 0;
 		for(int i =0; i < integerList.size(); i++) {
-			if (intergerList.get(1))
+			if (integerList.get(i)==intToFind) {
 
-				count++;
+				countDracula++;
+			}
 		}
-		 if(count > 1);
+		 if(countDracula > 1)
 		 return true;
 		 else
 			 return false;
@@ -127,7 +128,7 @@ public class Exercises {
 
 
 
-		return false;
+
 	}
 
 	/*
