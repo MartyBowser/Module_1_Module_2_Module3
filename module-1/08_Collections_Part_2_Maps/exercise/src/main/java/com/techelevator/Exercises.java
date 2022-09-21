@@ -34,7 +34,36 @@ public class Exercises {
 	 *
 	 */
 	public String animalGroupName(String animalName) {
-		return null;
+
+		String groupName = "";
+
+		//create map
+		Map<String, String> animalNames = new HashMap<>();
+
+		animalNames.put("rhino", "Crash");
+		animalNames.put("giraffe", "Tower");
+		animalNames.put("elephant", "Herd");
+		animalNames.put("lion", "Pride");
+		animalNames.put("crow", "Murder");
+		animalNames.put("pigeon", "Kit");
+		animalNames.put("flamingo", "Pat");
+		animalNames.put("deer", "Herd");
+		animalNames.put("dog", "Pack");
+		animalNames.put("crocodile", "Float");
+
+		// use our animalName to look up the value from the map
+		if (animalName != null) {
+			groupName = animalNames.get(animalName.toLowerCase());
+		}
+		//check if groupName is null
+		if (groupName == null || groupName.equals("")) {
+
+			//return the value
+			groupName = "unknown";
+		}
+
+
+		return groupName;
 	}
 
 	/*
@@ -115,7 +144,25 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Integer> wordCount(String[] words) {
-		return null;
+		Map<String, Integer> oldSchool = new HashMap<>();
+
+		for (String Jiren : words) {
+
+			String num = Jiren;
+
+			if (oldSchool.containsKey(num)) {
+
+				int number = oldSchool.get(num);
+
+				oldSchool.put(num, number + 1);
+
+			} else
+				oldSchool.put(num, 1);
+
+		}
+
+
+		return oldSchool;
 	}
 
 	/*
@@ -130,8 +177,33 @@ public class Exercises {
 	 *
 	 */
 	public Map<Integer, Integer> integerCount(int[] ints) {
-		return null;
+		Map<Integer, Integer> oldSchool = new HashMap<>();
+
+		for (int provided : ints) {
+
+			int sum = provided;
+
+			if (oldSchool.containsKey(sum)) {
+
+				int number = oldSchool.get(sum);
+
+				oldSchool.put(sum, number + 1);
+
+			} else
+				oldSchool.put(sum, 1);
+
+
+
+		}
+		return oldSchool;
 	}
+
+
+
+
+
+
+
 
 	/*
 	 * Given an array of Strings, return a Map<String, Boolean> where each different String is a key and value
