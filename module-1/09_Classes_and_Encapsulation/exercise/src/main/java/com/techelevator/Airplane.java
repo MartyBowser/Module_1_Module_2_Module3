@@ -63,7 +63,7 @@ public class Airplane {
     public int getBookedCoachSeats() {
         return bookedCoachSeats;
     }
-    public int gettotalCoachSeats() {
+    public int gettotalCoachSeats(){
         return totalCoachSeats;
     }
 }
