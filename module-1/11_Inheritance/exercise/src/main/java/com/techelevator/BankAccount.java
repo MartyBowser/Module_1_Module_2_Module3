@@ -28,12 +28,12 @@ public class BankAccount {
     }
 
     public int deposit(int amountToDeposit){
-        balance += amountToDeposit;
+        balance = balance + amountToDeposit;
         return balance;
     }
 
     public int withdraw(int amountToWithdraw){
-        balance -= amountToWithdraw;
+        balance = balance -  amountToWithdraw;
         return balance;
     }
 }
