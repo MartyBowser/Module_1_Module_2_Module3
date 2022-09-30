@@ -25,10 +25,10 @@ public class FrontTimesTest {
          FrontTimes sadTimes = new FrontTimes();
 
          //Act
-         String results = sadTimes.generateString("Chocolate", 3);
+         String results = sadTimes.generateString("abc", 1);
 
          //Assert
-         Assert.assertEquals("ChoChoCho",results );
+         Assert.assertEquals("abc",results );
 
 
 
