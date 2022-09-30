@@ -1,3 +1,5 @@
+package com.techelevator;
+
 import com.techelevator.SameFirstLast;
 import org.junit.Assert;
 import org.junit.Test;
