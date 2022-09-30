@@ -11,6 +11,7 @@ public class BankCustomer {
     private List<Accountable> accounts = new ArrayList<>();
 
 
+
     public Accountable[] getAccounts() {
 
         Accountable[] accountList = new Accountable[accounts.size()];
