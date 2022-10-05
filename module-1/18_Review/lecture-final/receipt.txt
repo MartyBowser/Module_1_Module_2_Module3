@@ -1,0 +1,3 @@
+Total Transactions Received: 7
+Total sum: -76.38
+Date Received: 2022-10-05
