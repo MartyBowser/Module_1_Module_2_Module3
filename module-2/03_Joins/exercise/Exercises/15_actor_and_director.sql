@@ -5,5 +5,5 @@ SELECT title, person_name
 FROM movie
 JOIN movie_actor ON movie_actor.movie_id = movie.movie_id
 JOIN person ON person.person_id = movie_actor.actor_id
-WHERE director_id = actor_id
+WHERE director_id = person_id
 ORDER BY title ASC;
