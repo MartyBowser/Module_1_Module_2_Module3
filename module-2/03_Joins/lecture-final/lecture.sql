@@ -53,10 +53,23 @@ FROM city
 JOIN state ON city.state_abbreviation = state.state_abbreviation
 WHERE census_region = 'Midwest';
 
--- Write a query to retrieve the number of cities in the city table for each state in the Midwest census region.
-
+-- Write a query to retrieve the number of cities in the city table for 
+-- each state in the Midwest census region.
+SELECT state.state_abbreviation, COUNT(city_name), SUM(city.population), MAX(city.area)
+FROM state
+JOIN city ON state.state_abbreviation = city.state_abbreviation
+WHERE state.census_region = 'Midwest'
+GROUP BY state.state_abbreviation;
 
 -- Modify the previous query to sort the results by the number of cities in descending order.
+SELECT state.state_abbreviation, COUNT(city_name) AS num_cities, SUM(city.population), MAX(city.area)
+FROM state
+JOIN city ON state.state_abbreviation = city.state_abbreviation
+WHERE state.census_region = 'Midwest'
+GROUP BY state.state_abbreviation
+ORDER BY num_cities DESC;
+
+
 
 
 
