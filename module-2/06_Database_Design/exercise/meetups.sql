@@ -66,7 +66,7 @@ CREATE TABLE Event_number(
 	('Thor', 'Asgardian', 'god_of_thunder_milnir_left_me@rainbowbridge.com', '', '01-01-1700', True),
 	('Groot', 'I_am', 'I_am_groot_groot_groot@grootgrootgroot.groot', '426-476-6667', '02-02-2020', False),
 	('Steve', 'Rogers', 'I_am_the_first_avenger@marvel.mail.com', '', '07-04-1920', False),
-	('Sam', 'Wilson', 'dont_say_on_your_left@marvel.maol.com','', '06-24-1994',True),
+	('Sam', 'Wilson', 'dont_say_on_your_left@marvel.maol.com', '426-851-2036', '06-24-1994',True),
 	('Rocket', 'Racoon', 'ill_trade_ya@guardians.com', '', '08-13-2020',False);
 	
 	INSERT INTO Interest_group(group_name, number_of_members)
