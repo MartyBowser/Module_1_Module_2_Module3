@@ -89,7 +89,26 @@ public class JdbcDepartmentDao implements DepartmentDao {
 
 	@Override
 	public void updateDepartment(Department updatedDepartment) {
+// Step 1 - Declare a variable for what you want to return
+		// Step 2 - Write out the SQL and store it to a string variable
 
+		String sql = "UPDATE department " +
+				"Set name = ? " +
+				"WHERE department_id = ?;";
+		// Step 3 - Send the sql to the database and store results
+		jdbcTemplate.update(sql, updatedDepartment.getName(), updatedDepartment.getId());
+		//        a) If you want a result set (spreadsheet) to come back,
+    /*           ie you're expecting multiple columns, use+
+                  jdbcTemplate.queryForRowSet
+              b) If you want only a single value back from the query
+                 then you can use jdbcTemplate.queryForObject
+              c) If you are running an update or delete, use the
+                    jdbcTemplate.update
+        Step 4 - if we have results from the database map them to
+                the results we want to return that we declared in
+                Step 1
+        Step 5 - Return the results if there are any
+     */
 	}
 
 }
