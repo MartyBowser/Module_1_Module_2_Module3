@@ -90,7 +90,7 @@ public class JdbcTimesheetDao implements TimesheetDao {
         double billableHours = 0;
         String sql = "SELECT SUM(hours_worked) AS billable_hours " +
                      "FROM timesheet " +
-                     "WHERE employee_id = ? AND project_id = ?";
+                     "WHERE employee_id = ? AND project_id = ? AND billable = true";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, employeeId, projectId);
         if (results.next()) {
             billableHours = results.getDouble("billable_hours");
