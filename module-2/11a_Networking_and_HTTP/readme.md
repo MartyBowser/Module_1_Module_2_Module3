@@ -1,0 +1,1 @@
+The **Networking and HTTP** unit is usually covered during the first part of the **Consuming Restful APIs** unit. As such, there are no instructor resources in this unit. You can find instructor resources in the **Consuming Restful APIs** unit for your language.
