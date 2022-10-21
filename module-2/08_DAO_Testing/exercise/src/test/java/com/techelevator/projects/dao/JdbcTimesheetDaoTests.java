@@ -54,7 +54,7 @@ public class JdbcTimesheetDaoTests extends BaseDaoTests {
 
     @Test
     public void getTimesheetsByProjectId_returns_list_of_all_timesheets_for_project() {
-        List<Timesheet> results = dao.getTimesheetsByEmployeeId(1);
+        List<Timesheet> results = dao.getTimesheetsByProjectId(1);
 
         //Assert
         Assert.assertEquals(3, results.size());
@@ -119,7 +119,15 @@ public class JdbcTimesheetDaoTests extends BaseDaoTests {
 
     @Test
     public void getBillableHours_returns_correct_total() {
-        Assert.fail();
+
+       //Arrange
+       double billableHours = dao.getBillableHours(2,2);
+
+        //Act
+
+        //Assert
+
+       Assert.assertEquals(0, billableHours, 2);
     }
 
     private void assertTimesheetsMatch(Timesheet expected, Timesheet actual) {

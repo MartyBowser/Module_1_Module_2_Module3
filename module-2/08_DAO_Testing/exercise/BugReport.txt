@@ -12,33 +12,33 @@ How did you fix this bug? I added billable value to the end of the set clause li
 
 Bug 2
 -----
-Test that demonstrates problem:
+Test that demonstrates problem: getTimesheetsByEmployeeId(int employeeId)
 
-Expected output:
+Expected output:2
 
-Actual output:
+Actual output:1
 
-How did you fix this bug?
+How did you fix this bug?changed the statement from if to while to allow it to continue to run.
 
 
 Bug 3
 -----
-Test that demonstrates problem:
+Test that demonstrates problem:getTimesheetsByProjectId(int projectId)
 
-Expected output:
+Expected output:3
 
-Actual output:
+Actual output:2
 
-How did you fix this bug?
+How did you fix this bug? updated the where in the method from employee_id to project_id
 
 
 Bug 4
 -----
-Test that demonstrates problem:
+Test that demonstrates problem: getBillableHours_returns_correct_total
 
-Expected output:
+Expected output: 0.0
 
-Actual output:
+Actual output: 2.0
 
-How did you fix this bug?
+How did you fix this bug? added billable variable to where
 
