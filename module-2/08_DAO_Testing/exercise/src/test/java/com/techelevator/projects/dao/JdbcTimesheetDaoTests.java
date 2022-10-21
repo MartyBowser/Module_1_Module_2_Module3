@@ -4,7 +4,10 @@ import com.techelevator.projects.model.Timesheet;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.internal.verification.Times;
 
+import javax.sql.DataSource;
+import java.sql.Time;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -20,51 +23,98 @@ public class JdbcTimesheetDaoTests extends BaseDaoTests {
             LocalDate.parse("2021-02-01"), 2.0, false, "Timesheet 4");
     
     private JdbcTimesheetDao dao;
-
+    private Timesheet testTimesheet;
 
     @Before
     public void setup() {
         dao = new JdbcTimesheetDao(dataSource);
     }
 
+
     @Test
     public void getTimesheet_returns_correct_timesheet_for_id() {
-        Assert.fail();
+        Timesheet result = dao.getTimesheet(1);
+        assertTimesheetsMatch(TIMESHEET_1, result);
     }
 
     @Test
     public void getTimesheet_returns_null_when_id_not_found() {
-        Assert.fail();
+      Timesheet result = dao.getTimesheet(111422);
+      Assert.assertEquals(null, result);
+
     }
 
     @Test
     public void getTimesheetsByEmployeeId_returns_list_of_all_timesheets_for_employee() {
-        Assert.fail();
+        List<Timesheet> results = dao.getTimesheetsByEmployeeId(1);
+
+        //Assert
+        Assert.assertEquals(2, results.size());
     }
 
     @Test
     public void getTimesheetsByProjectId_returns_list_of_all_timesheets_for_project() {
-        Assert.fail();
+        List<Timesheet> results = dao.getTimesheetsByEmployeeId(1);
+
+        //Assert
+        Assert.assertEquals(3, results.size());
     }
 
     @Test
     public void createTimesheet_returns_timesheet_with_id_and_expected_values() {
-        Assert.fail();
+        Timesheet testTimesheet = new Timesheet(0,2,2,
+                LocalDate.parse("2021-02-01"),2.0, false, "Timesheet 5");
+
+        Timesheet result = dao.createTimesheet(testTimesheet);
+        Assert.assertTrue(result.getTimesheetId() > 0);
+        testTimesheet.setTimesheetId(result.getTimesheetId());
+        assertTimesheetsMatch(testTimesheet, result);
     }
 
     @Test
     public void created_timesheet_has_expected_values_when_retrieved() {
-        Assert.fail();
+        Timesheet testTimesheet = new Timesheet(4, 2, 2,
+                LocalDate.parse("2021-02-01"), 2.0, false, "Timesheet 4");
+
+        //Act
+        Timesheet result = dao.createTimesheet(testTimesheet);
+        Timesheet retrievedTimesheet = dao.getTimesheet(result.getTimesheetId());
+
+        //Assert
+        assertTimesheetsMatch(result, retrievedTimesheet);
     }
 
     @Test
     public void updated_timesheet_has_expected_values_when_retrieved() {
-        Assert.fail();
+        Timesheet timesheetToUpdate = dao.getTimesheet(4);
+
+        timesheetToUpdate.setEmployeeId(1);
+        timesheetToUpdate.setProjectId(2);
+        timesheetToUpdate.setDateWorked(LocalDate.parse("2022-02-01"));
+        timesheetToUpdate.setHoursWorked(8);
+        timesheetToUpdate.setBillable(true);
+        timesheetToUpdate.setDescription("Timesheet 5");
+
+        //Act
+        dao.updateTimesheet(timesheetToUpdate);
+        Timesheet retrievedTimeSheet = dao.getTimesheet(4);
+
+        //Assert
+        assertTimesheetsMatch(timesheetToUpdate, retrievedTimeSheet);
     }
 
     @Test
     public void deleted_timesheet_cant_be_retrieved() {
-        Assert.fail();
+
+        dao.deleteTimesheet(1);
+
+        //Assert
+        Timesheet retrievedTimesheet = dao.getTimesheet(1);
+        Assert.assertEquals(null, retrievedTimesheet);
+
+        List<Timesheet> results = dao.getTimesheetsByEmployeeId(1);
+        Assert.assertEquals(1, results.size());
+        assertTimesheetsMatch(TIMESHEET_2, results.get(0));
     }
 
     @Test
