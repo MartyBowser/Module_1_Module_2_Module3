@@ -1,12 +1,13 @@
 Bug 1
 -----
-Test that demonstrates problem:
+Test that demonstrates problem:updated_timesheet_has_expected_values_when_retrieved()
 
-Expected output:
+Expected output:true
 
-Actual output:
+Actual output:false
 
-How did you fix this bug?
+
+How did you fix this bug? I added billable value to the end of the set clause line
 
 
 Bug 2
