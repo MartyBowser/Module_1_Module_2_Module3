@@ -2,6 +2,7 @@ package com.techelevator.hotels.services;
 
 import com.techelevator.hotels.model.City;
 import com.techelevator.hotels.model.Hotel;
+import com.techelevator.hotels.model.NASAPictureOfTheDay;
 import com.techelevator.hotels.model.Review;
 import org.springframework.web.client.RestTemplate;
 
@@ -49,8 +50,12 @@ public class HotelService {
         return hotels;
     }
 
-    public City getWithCustomQuery(){
-        return null;
+    public NASAPictureOfTheDay getWithCustomQuery(){
+
+        String url = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY";
+        NASAPictureOfTheDay pod = restTemplate.getForObject(url, NASAPictureOfTheDay.class);
+        return pod;
+
     }
 
 }

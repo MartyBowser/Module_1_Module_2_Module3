@@ -30,7 +30,7 @@ public class App {
             } else if (menuSelection == 5) {
                 hotelService.getHotelsByStarRating(4);
             } else if (menuSelection == 6) {
-                System.out.println("Not implemented - Create a custom Web API query here");
+                hotelService.getWithCustomQuery();
             } else if (menuSelection == 0) {
                 continue;
             } else {
