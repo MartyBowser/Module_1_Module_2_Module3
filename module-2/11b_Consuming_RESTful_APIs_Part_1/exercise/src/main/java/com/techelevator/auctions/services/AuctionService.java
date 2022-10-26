@@ -1,5 +1,8 @@
 package com.techelevator.auctions.services;
 
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.web.client.RestTemplate;
 
 import com.techelevator.auctions.model.Auction;
@@ -8,6 +11,7 @@ public class AuctionService {
 
     public static String API_BASE_URL = "http://localhost:3000/auctions/";
     private RestTemplate restTemplate = new RestTemplate();
+
 
 
     public Auction[] getAllAuctions() {

@@ -15,20 +15,77 @@ public class AuctionService {
     public static String API_BASE_URL = "http://localhost:3000/auctions/";
     private RestTemplate restTemplate = new RestTemplate();
 
+    private HttpEntity<Auction> createEntity(Auction auction) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        HttpEntity<Auction> entity = new HttpEntity<>(auction, headers);
+        return entity;
+    }
 
     public Auction add(Auction newAuction) {
         // place code here
-        return null;
+        HttpEntity<Auction> entity = createEntity(newAuction);
+        Auction result = null;
+
+
+        try {
+
+            String url = API_BASE_URL ;
+            result = restTemplate.postForObject(url, entity, Auction.class );
+
+
+        } catch (RestClientResponseException e) { // this is when the server actually communicates an exception back to us
+            // handles exceptions thrown by rest template and contains status codes
+            BasicLogger.log(e.getRawStatusCode() + " : " + e.getStatusText());
+        } catch (ResourceAccessException e) { // we weren't able to find the server at all
+            // i/o error, ex: the server isn't running
+            BasicLogger.log(e.getMessage());
+        }
+
+        return result;
     }
 
     public boolean update(Auction updatedAuction) {
         // place code here
-        return false;
+        HttpEntity<Auction> entity = createEntity(updatedAuction);
+        boolean result = false;
+
+        try {
+
+            String url = API_BASE_URL  + updatedAuction.getId();
+            restTemplate.put(url, entity, Auction.class );
+            result = true;
+
+        } catch (RestClientResponseException e) { // this is when the server actually communicates an exception back to us
+            // handles exceptions thrown by rest template and contains status codes
+            BasicLogger.log(e.getRawStatusCode() + " : " + e.getStatusText());
+        } catch (ResourceAccessException e) { // we weren't able to find the server at all
+            // i/o error, ex: the server isn't running
+            BasicLogger.log(e.getMessage());
+        }
+
+        return result;
     }
 
     public boolean delete(int auctionId) {
         // place code here
-        return false;
+        boolean result = false;
+
+        try {
+
+            String url = API_BASE_URL + auctionId;
+            restTemplate.delete(url);
+            result = true;
+
+        } catch (RestClientResponseException e) { // this is when the server actually communicates an exception back to us
+            // handles exceptions thrown by rest template and contains status codes
+            BasicLogger.log(e.getRawStatusCode() + " : " + e.getStatusText());
+        } catch (ResourceAccessException e) { // we weren't able to find the server at all
+            // i/o error, ex: the server isn't running
+            BasicLogger.log(e.getMessage());
+        }
+
+        return result;
     }
 
     public Auction[] getAllAuctions() {
