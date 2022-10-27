@@ -66,11 +66,6 @@ public class MemoryAuctionDao implements AuctionDao {
     }
 
     @Override
-    public List<Auction> searchByTitleAndPrice(String title, double currentBid) {
-        return null;
-    }
-
-    @Override
     public Auction update(Auction auction, int id) {
         Auction result = auction;
         boolean finished = false;
