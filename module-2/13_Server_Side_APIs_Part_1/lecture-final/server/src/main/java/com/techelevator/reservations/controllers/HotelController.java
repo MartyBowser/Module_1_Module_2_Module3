@@ -1,9 +1,6 @@
 package com.techelevator.reservations.controllers;
 
-import com.techelevator.reservations.dao.HotelDao;
-import com.techelevator.reservations.dao.MemoryHotelDao;
-import com.techelevator.reservations.dao.MemoryReservationDao;
-import com.techelevator.reservations.dao.ReservationDao;
+import com.techelevator.reservations.dao.*;
 import com.techelevator.reservations.model.Hotel;
 import com.techelevator.reservations.model.Reservation;
 import org.springframework.web.bind.annotation.*;
@@ -65,8 +62,10 @@ public class HotelController {
         return reservationDao.create(newReservation, newReservation.getHotelID());
     }
 
-    @RequestMapping(path="/hotels/filter", method = RequestMethod.GET)
-    public List<Hotel> filter(@RequestParam String state, @RequestParam(required = false) String city) {
+    @RequestMapping(path="/hotels/search", method = RequestMethod.GET)
+    public List<Hotel> filter(@RequestParam(defaultValue="Ohio") String state,
+                              @RequestParam(required = false) String city,
+                              @RequestParam int rating) {
 
         // If instead of saying required= false for city, I could give it a default value
         //@RequestParam(defaultValue="") String city
