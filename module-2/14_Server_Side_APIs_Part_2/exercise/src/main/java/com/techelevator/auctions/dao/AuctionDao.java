@@ -16,6 +16,8 @@ public interface AuctionDao {
 
     List<Auction> searchByPrice(double currentBid_lte);
 
+    List<Auction> searchByTitleAndPrice(String title, double currentBid);
+
     Auction update(Auction auction, int id);
 
     void delete(int id);
