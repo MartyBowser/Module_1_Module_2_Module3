@@ -7,4 +7,6 @@ import java.util.List;
 public interface ReporterDao {
 
     List<Reporter> getReporters();
+    Reporter getReporter(int id);
+    Reporter createReporter(Reporter reporter);
 }
