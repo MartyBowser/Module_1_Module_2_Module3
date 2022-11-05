@@ -1,5 +1,7 @@
 package com.techelevator.tenmo.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -9,7 +11,11 @@ public class Report {
     private String location;
     private String language;
     private int numberOfEyewitnesses;
+
+    @JsonFormat(pattern="yyyy-MM-dd")
     private LocalDate reportDate;
+
+    @JsonFormat(pattern="HH:mm:ss")
     private LocalTime reportTime;
     private int moonPhaseId;
     private String weather;

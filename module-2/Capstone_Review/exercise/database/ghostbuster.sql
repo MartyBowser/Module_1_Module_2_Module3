@@ -37,7 +37,7 @@ CREATE TABLE report(
 	language varchar(25),
 	number_of_eyewitnesses int,
 	report_date date,
-	report_time timestamp,
+	report_time time WITHOUT TIME ZONE,
 	moon_phase_id int,
 	weather varchar(25),
 	description text,
