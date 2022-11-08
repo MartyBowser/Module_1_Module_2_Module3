@@ -18,3 +18,27 @@ h3{
 .menuTitle{
     color:purple;
 }
+blockquote {
+    font-style: italic;
+}
+#bits{
+    color:red;
+}
+#titleAmpersand{
+    color: blue;
+}
+#bytes{
+    color:green;
+}
+
+th{
+    text-align:left;
+}
+td{
+    text-align:center;
+}
+img{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}

@@ -1,0 +1,105 @@
+/*
+Universal selector
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+/* Select by tag */
+img{
+    height: 200px;
+}
+
+/*select an element by id*/
+#catwoman {
+   /* background-color: lightblue; */
+}
+
+/*select an element by class*/
+.movie-card {
+ /*  background-color: gray; */
+   border: solid 1px black;
+   border-radius: 5px;
+   margin: 15px;
+   padding:10px;
+  
+   width:250px;
+   height: 500px;
+}
+
+.marvel {
+/* background-color: red; */
+}
+
+a:hover {
+    color:white;
+}
+
+#catwoman a:hover {
+    font-size:30px;
+    color:white;
+}
+
+div:last-child {
+    border-color:orange;
+    border-width: 2px;
+}
+
+div:first-child {
+    border-color:purple;
+    border-width: 4px;
+}
+
+div:nth-child(2) {
+    border-width:4px;
+}
+
+div:nth-child(even) {
+    background-color:yellow;
+}
+div:nth-child(odd) {
+    background-color:green;
+}
+
+/*
+ block - takes up all horizontal space and 
+ we can manipulate width and height
+ inline - takes up only the space it needs,
+ and we cannot manipulate width and height.
+ inline-block - takes up only the space it 
+ needs but will respond to us manipulating
+ the width and height
+*/
+span {
+    background-color:red;
+    width: 100px;
+    display: inline-block;
+}
+
+h2{
+    text-transform:uppercase;
+}
+
+blockquote {
+    background-color:orange;
+    width: 50%;
+    /*normal flow */
+    /*position: static;*/
+
+    /*relative to normal flow*/
+    /*position:relative;
+    left: 200px;*/
+
+    /*stuck on the page*/
+   /* position:absolute;
+    left: 25px;
+    top:10px;*/
+
+    /*stuck relative to the browser*/
+   /* position:fixed;
+    top:10px;
+    left:25px; */
+    
+    
+}
