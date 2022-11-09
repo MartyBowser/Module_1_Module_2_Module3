@@ -1,10 +1,16 @@
-
+header{
+    color:  darkred;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+    font-style: oblique;
+}
 
 
 h1{
 font-size: x-large;
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 text-align: center;
+
 
 }
 img{
@@ -25,6 +31,7 @@ body{
     background-image: url(https://c4.wallpaperflare.com/wallpaper/342/395/609/anime-bleach-kurosaki-ichigo-nanfe-wallpaper-preview.jpg);
     background-size: cover;
     background-attachment: scroll;
+    background-color: lightgray;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -54,6 +61,7 @@ table{
     column: gap 30px;
     column-fill: balance;
     columns: auto;
+    padding: 15px;
     
     
     
@@ -73,7 +81,4 @@ blockquote{
     font-style: italic;
     color: red;
 }
-#Zangetsu{
-    color: red;
-    font-size: 20px;
-}
+

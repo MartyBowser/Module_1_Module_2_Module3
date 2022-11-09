@@ -1,0 +1,22 @@
+body{
+    
+    background-image: url(https://assets.rebelmouse.io/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8yMjg4Mzk0OS9vcmlnaW4uanBnIiwiZXhwaXJlc19hdCI6MTcyMTUyODUyM30.kieKG20zcvcncvQOIDz2OjrGE-KwWfn2CJCVYIx86cg/img.jpg?width=1200&height=800&quality=85&coordinates=93%2C0%2C94%2C0);
+    background-size: cover;
+   background-attachment: scroll;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left; 
+}
+
+form{
+
+    background-color: transparent;
+    color: darkred;
+    padding: 10px;  
+
+   
+   }
+   header{
+       padding: 10px;
+       color: darkred;
+   }
