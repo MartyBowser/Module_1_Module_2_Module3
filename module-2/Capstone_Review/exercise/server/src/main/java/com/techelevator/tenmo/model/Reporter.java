@@ -1,6 +1,6 @@
 package com.techelevator.tenmo.model;
 
-public class Reporter {
+public class  Reporter {
 
     private int reporterId;
     private String reporterName;

@@ -1,0 +1,79 @@
+
+
+
+h1{
+font-size: x-large;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+text-align: center;
+
+}
+img{
+width: 400px;
+margin-right: auto;
+margin-left: auto;
+display: block;
+
+}
+title{
+text-align: center;
+font-size: xx-large;
+font-family: fantasy;
+font-weight: 900;
+}
+body{
+    
+    background-image: url(https://c4.wallpaperflare.com/wallpaper/342/395/609/anime-bleach-kurosaki-ichigo-nanfe-wallpaper-preview.jpg);
+    background-size: cover;
+    background-attachment: scroll;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+p{
+    text-align: center;
+    font-size: xx-large;
+
+}
+figcaption{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: darkred;
+    
+
+}
+h2{
+    text-decoration: underline;
+    color: red;
+    
+}
+table{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border: 10px rgb(6, 6, 10) solid;
+    column: gap 30px;
+    column-fill: balance;
+    columns: auto;
+    
+    
+    
+}
+th{
+    text-decoration: underline 2px gray;
+    color:darkred;
+    text-transform: uppercase;
+    
+
+}
+td{
+    text-transform: uppercase  ;
+    color: red; 
+}
+blockquote{
+    font-style: italic;
+    color: red;
+}
+#Zangetsu{
+    color: red;
+    font-size: 20px;
+}

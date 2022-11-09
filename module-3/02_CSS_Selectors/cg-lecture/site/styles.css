@@ -1,0 +1,32 @@
+/*
+Universal selector
+*/
+*{
+    box-sizing: border-box;
+}
+/* select by tag */
+img{
+   height: 200px;
+}
+#catwoman {
+    background-color: lightblue;   
+    }
+.movie-card{
+
+   
+    background-color: gray;
+    border: solid 1px black;
+    border-radius: 5px;
+    margin: 15px;
+}
+
+.marvel {
+background-color: red;
+}
+a:hover{
+    font-style: italic;
+    font-weight: inherit;
+    font-size: 30px;
+    color:whitesmoke
+    
+}
