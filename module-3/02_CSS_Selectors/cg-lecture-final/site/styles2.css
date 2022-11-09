@@ -1,0 +1,14 @@
+#span1{
+    color:green;
+}
+#span2{
+    color:red;
+}
+div {
+    border: black 31px dashed ; 
+    width: 250px;
+    height: 250px;
+    /*margin-top: 10px;*/
+    padding-top: 10px;
+   background-color:gray;
+} 

@@ -6,6 +6,11 @@ Universal selector
     box-sizing: border-box;
 }
 
+body{
+   height: 100vh;
+   width: 95vw;
+}
+
 /* Select by tag */
 img{
     height: 200px;
@@ -13,7 +18,7 @@ img{
 
 /*select an element by id*/
 #catwoman {
-   /* background-color: lightblue; */
+    background-color: lightblue; 
 }
 
 /*select an element by class*/
@@ -74,7 +79,7 @@ div:nth-child(odd) {
 span {
     background-color:red;
     width: 100px;
-    display: inline-block;
+   display:block;
 }
 
 h2{
