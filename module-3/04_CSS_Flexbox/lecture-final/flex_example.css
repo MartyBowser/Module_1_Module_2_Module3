@@ -1,0 +1,59 @@
+body{
+    width:95vw;
+    height: 95vh; 
+
+    display:flex;   /* by default, when something is display:flex
+                    each of the immediate child elements will be put into a
+                    row */
+    flex-direction: row; /* can also indicate it's a column or row here */
+    gap: 10px;
+    justify-content: flex-end; /*if we are a row, then this controls horizontal alignment*/
+                            /* if we are a column, then this controls vertical alignment */
+                            /* center, flex-start, flex-end, space-between, space-around */
+    align-items: center;    /*if we are a row, then this controls vertical alignment*/
+                            /* if we are a column, then this controls horizontal alignment */
+                            /* center, flex-start, flex-end, space-between, space-around */
+    flex-wrap: nowrap; /*nowrap, wrap, wrap-reverse */
+
+
+
+}
+
+
+div {
+    width:100px;
+    height:100px;
+    text-align:center;
+    font-size: 50px;
+    flex-grow: 1; /*indicating that it should fill the available space*/
+    flex-shrink: 1;
+}
+
+#div1 {
+    background-color: blue;
+  /*  flex-basis: 50%; /*initial size */
+  flex-grow: 3; /*indicates how much something should grow */
+  flex-shrink: 2;
+  order: 400;
+}
+
+#div2 {
+    background-color: red;
+    order: 300;
+}
+
+#div3 {
+    background-color: yellow;
+    order:200;
+}
+
+#div4 {
+    background-color: green;
+    order: 150;
+}
+
+#div5 {
+    background-color: purple;
+    order: 100;
+
+}

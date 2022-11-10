@@ -1,0 +1,201 @@
+ 
+#featured section {
+  display: flex;
+  flex-direction: row;
+}
+
+body{
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+}
+
+#featured section article div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#hero footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+#all-items section article {
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0px;
+  border: 0px solid white;
+}
+
+#all-items section article:nth-child(2) div:first-child {
+ /* flex-direction: row-reverse; */
+ order: 2;
+}
+
+@media screen and (max-width: 700px) {
+
+#featured section {
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+}
+
+/***** enter flexbox CSS above this line *****/
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  width: 80vw;
+  font-family: Tahoma, sans-serif;
+}
+
+#hero {
+  font-family: 'Shadows Into Light', cursive;
+  ;
+  font-size: 3vw;
+  text-transform: uppercase;
+  color: black;
+  width: 80vw;
+  font-weight:bold;
+}
+
+#hero img {
+  width: 80vw;
+}
+
+#hero footer {
+  height: 80px;
+  padding: 0 15px;
+  margin-top: -23px;
+  background-color: salmon;
+}
+
+#hero>footer a,
+#hero>footer a:visited,
+#hero>footer a:active {
+  text-decoration: none;
+  color: black;
+}
+
+#hero>footer a:hover {
+  background-color: slategray;
+}
+
+#featured {
+  font-family: Tahoma, sans-serif;
+  color: slategray;
+  margin-top: 25px;
+}
+
+#featured>header,
+#all-items>header {
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 25px;
+}
+
+#featured section article:nth-child(even) {
+  border-left: 12px solid darkcyan;
+  border-right: 12px solid darkcyan;
+}
+
+#featured section article div {
+  padding: 40px;
+  max-height: 10vw;
+  background-color: lightblue;
+  color: white;
+  font-size: 0.75vw;
+}
+
+#featured section article p {
+  padding: 20px;
+}
+
+#featured section article header,
+#all-items section article div header {
+  font-weight: bold;
+  margin: 15px;
+}
+
+#all-items {
+  margin-top: 25px;
+}
+
+#all-items section article {
+  color: whitesmoke;
+  background-color: darkseagreen;
+}
+
+#all-items section article div:first-child {
+  font-size: .5vw;
+  margin: 10px;
+  padding: 30px;
+  border-radius: 10vw;
+  width: 3vw;
+  height: 3vw;
+  background-color: rgba(0, 0, 1, 0.2);
+}
+
+#all-items section article:nth-child(even) div:last-child {
+  text-align: right;
+}
+
+@media only screen and (max-width: 550px) {
+  #hero footer {
+    margin-top: -5px;
+    height: 60px;
+    font-size: 20px;
+  }
+
+  #hero,
+  #hero img {
+    width: 100vw;
+  }
+
+  #featured>header,
+  #all-items>header {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 720px) {
+
+  #featured section {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  #featured section article:nth-child(even){
+    border:none;
+  }
+  #all-items section article{
+    flex-direction:column;
+    padding: 10px;
+    align-items:center;
+  }
+  #all-items section article div{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  #all-items section article:nth-child(2) div:first-child {
+    /* flex-direction: row-reverse; */
+    order: 0;
+   }
+
+   #all-items section article:nth-child(even) div:last-child {
+    text-align: left;
+  }
+  }

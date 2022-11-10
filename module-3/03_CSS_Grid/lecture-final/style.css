@@ -25,6 +25,29 @@ footer{
     height: 100vh;
 }
 
+.food-item h3 {
+    grid-area: food-title;
+}
+
+.food-item img {
+    grid-area: food-image;
+}
+
+.food-item p {
+    grid-area: food-desc;
+}
+
+.food-item {
+    border-top: solid gray 1px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 50px 1fr;
+    grid-template-areas:
+        "food-title food-image"
+        "food-desc food-image"
+        ;
+}
+
 @media screen and (max-width: 968px) {
     .container {
         grid-template-columns: 200px 1fr; 
