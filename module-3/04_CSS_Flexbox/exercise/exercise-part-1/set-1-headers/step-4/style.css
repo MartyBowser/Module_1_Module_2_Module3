@@ -6,16 +6,24 @@ body {
 header {
   background-color: #F0F0F0;
   padding: 20px;
+  display: flex;
+
 }
 
 .logo {
   width: 140px;
+  display: flex;
+  justify-content: start;
 }
 
 ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 li {
@@ -37,4 +45,6 @@ a:hover {
   color: #00AFEF;
   text-decoration: underline;
 }
-
+nav{
+  flex-grow: 99;
+}
