@@ -11,6 +11,7 @@
 function variables() {
   // Declares a variable where the value cannot be changed
   const myName = "Christopher";
+ 
   console.log(myName);
 
   const myAge = 37;
@@ -28,6 +29,13 @@ function variables() {
   const week = [
     "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"
   ];
+
+  const daysStartingWithT = [];
+  for(let anything of week){
+    if(anything && anything.toString().toUpperCase().startsWith("T")){
+      daysStartingWithT.push(anything);
+    }
+  }
 
   week.push("Saturday");
   week.push("Sunday");
@@ -238,4 +246,46 @@ function arrFxns() {
 
   //access by index
   console.log(myArray[0]);
+
+  countElements(myArray);
+}
+
+/*
+public int countElements(int[] myArray) {
+
+}
+*/
+
+
+function countElements(myArray) {
+  if(myArray) {
+    return myArray.length;
+  }
+  return 0;
+}
+
+function createPerson(firstName, lastName, age){
+  let person = {
+    name: firstName + " " + lastName,
+    age: age
+  };
+
+  person.favoriteMovie = "Morbius";
+
+  return person;
+}
+
+
+function templateLiteralExample(){
+
+  const myName = "Christopher";
+
+  // utilizing string concatenation
+  const myString = "Hello " + myName;
+  console.log(myString);
+
+  //or we can use template literals
+  const myString2 = `Hello ${myName}`;
+  console.log(myString2);
+
 }
