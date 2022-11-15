@@ -5,13 +5,16 @@
 		sumDouble(1, 2) → 3
 		sumDouble(3, 2) → 5
 		sumDouble(2, 2) → 8
-
+*/
 		function sumDouble(x, y) {
 			// do logic here
 			// return result;
+			if(x === y) {
+				return (x + y) * 2; 
+			}
 			return x + y;
         }
-*/
+
 
 /*
 2. **hasTeen** We'll say that a number is "teen" if it is in the range 13..19 inclusive. 
@@ -21,6 +24,19 @@
 		hasTeen(20, 19, 10) → true
 		hasTeen(20, 10, 13) → true
 */
+function hasTeen(val1, val2, val3) {
+if(val1 >= 13 && val1 <=19) {
+	return true;
+
+}
+if(val2 >= 13 && val2 <=19) {
+	return true;
+}
+if(val3 >= 13 && val3 <=19) {
+	return true;
+}
+else return false;
+}
 
 /* 
 3. **lastDigit** Given two non-negative int values, return true if they have the same 
@@ -30,6 +46,15 @@
 		lastDigit(6, 17) → false
 		lastDigit(3, 113) → true
 */
+function lastDigit(lastDigit1, lastDigit2) {
+	if(lastDigit1 % 10 === lastDigit2 % 10) {
+		return true;
+	}
+	if(lastDigit1 % 10 != lastDigit2 % 10) {
+		return false;
+}
+
+}
 
 /*
 4. **seeColor** Given a string, if the string begins with "red" or "blue" return that color 
@@ -39,6 +64,15 @@
 		seeColor("xxred") → ""
         seeColor("blueTimes") → "blue"
 */
+function seeColor(myString){
+	if(myString .startsWith ("red")){
+		return "red";
+	}
+	if(myString .startsWith ("blue")){
+		return "blue";
+	}
+	else return "";
+}
 
 /*
 5. **oddOnly** Write a function that given an array of integer of any length, removes
@@ -48,6 +82,20 @@
 		oddOnly([2, 4, 8, 32, 256]); → []
 */
 
+function oddOnly (arr) {
+	const odd = []
+	
+	for( let i=0; i < arr.length; i++){
+
+		if( arr[i] % 2 == 1){
+
+		
+		odd.push(arr[i])}
+		
+	}
+	return odd;
+}
+
 /*
 6. **frontAgain** Given a string, return true if the first 2 chars in the string also appear 
     at the end of the string, such as with "edited".
@@ -56,6 +104,13 @@
 		frontAgain("edit") → false
 		frontAgain("ed") → true
 */
+function frontAgain (passiveAggressor){
+	if(passiveAggressor.substring (0,2) == passiveAggressor.substring(passiveAggressor.length - 2)) {
+
+	
+	return true;}
+	else return false; 
+}
 
 /*
 7. **cigarParty** When squirrels get together for a party, they like to have cigars. 
