@@ -35,7 +35,7 @@ if(val2 >= 13 && val2 <=19) {
 if(val3 >= 13 && val3 <=19) {
 	return true;
 }
-else return false;
+else {return false;}
 }
 
 /* 
@@ -108,8 +108,9 @@ function frontAgain (passiveAggressor){
 	if(passiveAggressor.substring (0,2) == passiveAggressor.substring(passiveAggressor.length - 2)) {
 
 	
-	return true;}
-	else return false; 
+	return true;
+}
+	else{ return false;} 
 }
 
 /*
@@ -123,6 +124,17 @@ or false otherwise.
 		cigarParty(50, false) → true
 		cigarParty(70, true) → true
 */
+function cigarParty(cigars, isWeekend) {
+	if(isWeekend == true && cigars >= 40){
+		return true;
+	}
+	if (!(isWeekend) && cigars >= 40 && cigars <= 60) {
+		return true;
+	}
+	else{
+		return false;
+	}
+}
 
 /*
 8. **fizzBuzz** Given a number, return a value according to the following rules:
@@ -137,6 +149,19 @@ In all other cases return the original number.
 	fizzBuzz(15) → "FizzBuzz"
 	fizzBuzz(8) → 8
 */
+function fizzBuzz(number){
+    if(number%3 == 0 && number%5 == 0){
+        return "FizzBuzz";
+    }
+     if (number%3 == 0) {
+         return "Fizz";
+     }
+     if(number%5 == 0){
+         return "Buzz";
+     }
+     return number;
+ }
+
 
 /*
 9. **filterEvens** Write a function that filters an array to only include even numbers.
@@ -146,7 +171,15 @@ In all other cases return the original number.
 	filterEvens([2, 4, 6]) → [2, 4, 6]
 	filterEvens([100, 8, 21, 24, 62, 9, 7]) → [100, 8, 24, 62]
 */
-
+function filterEvens(values) {
+    const newValues = [];
+    for (let i = 0; i < values.length; i++) {
+      if (values[i] % 2 == 0) {
+        newValues.push(values[i]);
+      }
+    }
+    return newValues;
+  }
 /*
 10. **filterBigNumbers** Write a function that filters numbers greater than or equal to 100.
 
@@ -154,6 +187,15 @@ In all other cases return the original number.
 	filterBigNumbers([3, 2, 7, 1, -100, -120]) → []
 	filterBigNumbers([]) → []
 */
+function filterBigNumbers(values) {
+    const newValues = [];
+    for (let i = 0; i < values.length; i++) {
+      if (values[i] >= 100) {
+        newValues.push(values[i]);
+      }
+    }
+    return newValues;
+  }
 
 /*
 11. **filterMultiplesOfX** Write a function to filter numbers that are a multiple of a 
@@ -162,6 +204,16 @@ parameter, `x` passed in.
 	filterMultiplesOfX([3, 5, 1, 9, 18, 21, 42, 67], 3) → [3, 9, 18, 21, 42]
 	filterMultiplesOfX([3, 5, 10, 20, 18, 21, 42, 67], 5) → [5, 10, 20]
 */
+function filterMultiplesOfX(values, x) {
+    const newValues = [];
+    for (let i = 0; i < values.length; i++) {
+      if (values[i] % x == 0) {
+        newValues.push(values[i]);
+      }
+    }
+    return newValues;
+  }
+
 
 /*
 12. **createObject** Write a function that creates an object with a property called 
@@ -174,4 +226,14 @@ firstName, lastName, and age. Populate the properties with your values.
 		lastName,
 		age
 	}
-*/
+	*/
+	function createObject(firstName, lastName, age){
+        let person = {};
+        person.firstName = "Marty";
+        person.lastName = "Bowers";
+        person.age = "38";
+        return person;
+    }
+
+
+
