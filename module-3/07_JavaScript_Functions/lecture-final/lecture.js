@@ -272,6 +272,10 @@ function sumAllNumbers(numbersToSum) {
   */
 }
 
+
+
+
+
 /**
  * Takes an array and returns a new array of only numbers that are
  * multiples of 3
@@ -286,4 +290,80 @@ function allDivisibleByThree(numbersToFilter) {
       return x % 3 === 0
     }
   )
+}
+
+function concatAllStrings(){
+
+
+  // arguments - keyword that represents all the arguments passed into this method by a user
+  // Array.from - this is a built in library that javascript has and can convert arguments into an array
+  const myStrings = Array.from(arguments);
+
+
+  const result =  myStrings.reduce(
+    (resultFromPrevious, currentValue) => {
+      return resultFromPrevious + " " + currentValue;
+    }, ""
+  );
+
+  return result.trim();
+};
+
+
+
+// [100,150,95,3,200,1000]
+function findMax(nums) {
+
+  return nums.reduce(
+    (prevVal, currentValue) => {
+      if(prevVal > currentValue) {
+        return prevVal;
+      } else {
+        return currentValue;
+      }
+    }
+  );
+
+}
+
+// Use .filter when you want to get only a subset of your array based on some condition
+// Use .map when you want to transform each element inside of your array
+// Use .reduce when you want to reduce the array to a single value (sum, concat, max, min, etc.)
+// Use .forEach when you just want to iterate through every value
+
+const addresses = [{
+  street: "123 Main St",
+  city: "Columbus",
+  zip: "43085",
+  state: "OH"
+}]
+
+function printAddress(addresses){
+  
+  return addresses.map(
+    (x) => {
+      return x.street + " " + x.city + " " + x.state + " " + x.zip;
+    }
+  )
+
+}
+
+
+// forEach example 2
+function forEachExample2 ( arrayOfNums ) {
+
+  let largest = 0;
+  arrayOfNums.forEach(
+    (num) => {
+      if(num > largest) {
+        largest = num;
+      }
+    }
+  ); 
+/*
+  for(let num of arrayOfNums){
+   
+  } */
+
+  return largest;
 }
