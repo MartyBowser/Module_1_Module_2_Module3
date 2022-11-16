@@ -255,12 +255,13 @@ function myFilterExample() {
  */
 // for instance [1,3,5,9,7]
 function sumAllNumbers(numbersToSum) {
+  const defaultValue = 0;
   return numbersToSum.reduce(
     (sum, currentVal) => {
       debugger;
       return sum + currentVal;
       
-    }
+    }, defaultValue
   );
 
   /*

@@ -1,5 +1,5 @@
-const book_name = 'Cigar Parties for Dummies';
-const description = 'Host and plan the perfect cigar party for all of your squirrelly friends.';
+const book_name = 'Ghost Hunting for Dummies';
+const description = 'Learn how to hunt ghosts like the professionals.';
 const reviews = [
   {
     reviewer: 'Malcolm Madwell',
@@ -10,9 +10,9 @@ const reviews = [
   },
   {
     reviewer: 'Tim Ferriss',
-    title: 'Had a cigar party started in less than 4 hours.',
+    title: 'Caught a ghost in less than 4 hours.',
     review:
-      "It should have been called the four hour cigar party. That's amazing. I have a new idea for muse because of this.",
+      "It should have been called the four hour ghost hunt. That's amazing.",
     rating: 4
   },
   {
@@ -26,7 +26,7 @@ const reviews = [
     reviewer: 'Gary Vaynerchuk',
     title: 'And I thought I could write',
     review:
-      "There are a lot of good, solid tips in this book. I don't want to ruin it, but prelighting all the cigars is worth the price of admission alone.",
+      "There are a lot of good, solid tips in this book. I don't want to ruin it, but at the end you realize that you yourself are actually a ghost.",
     rating: 3
   }
 ];
