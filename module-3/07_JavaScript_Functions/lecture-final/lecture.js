@@ -257,7 +257,7 @@ function myFilterExample() {
 function sumAllNumbers(numbersToSum) {
   return numbersToSum.reduce(
     (sum, currentVal) => {
-      //debugger;
+      debugger;
       return sum + currentVal;
       
     }
