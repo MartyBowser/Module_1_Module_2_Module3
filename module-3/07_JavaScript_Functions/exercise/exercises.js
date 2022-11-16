@@ -105,7 +105,11 @@ function makeHappy(searchArray) {
  *
  * Use `map` and an anonymous function.
  */
-
+function getFullAddressesOfProperties(addresses){
+   return addresses.map((address)=>{
+   return (address.streetNumber)+ ' ' +(address.streetName)+ ' ' +(address.streetType)+ ' ' + (address.city)+ ' ' +(address.state)+ ' ' +(address.zip) 
+})
+}
 /** 
  * Write and document a function called findLargest that uses `forEach`
  * to find the largest element in an array.
