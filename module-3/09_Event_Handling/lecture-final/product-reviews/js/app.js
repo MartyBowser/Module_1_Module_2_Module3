@@ -80,12 +80,40 @@ function displayReview(review) {
 
 // LECTURE STARTS HERE ---------------------------------------------------------------
 
-// Set the product reviews page title.
-setPageTitle();
-// Set the product reviews page description.
-setPageDescription();
-// Display all of the product reviews on our page.
-displayReviews();
+//When we want to wait for the page to load before running any javascript
+//we can put an event listener for DOMContentLoaded
+document.addEventListener('DOMContentLoaded', (event) => {
+
+  // Set the product reviews page title.
+  setPageTitle();
+  // Set the product reviews page description.
+  setPageDescription();
+  // Display all of the product reviews on our page.
+  displayReviews();
+
+  const desc = document.querySelector(".description");
+  desc.addEventListener('click', (event) => {
+    toggleDescriptionEdit(event.target);
+  })
+
+  const inputDesc = document.getElementById("inputDesc")
+  inputDesc.addEventListener("mouseleave", (event) => {
+    exitDescriptionEdit(event.target, false);
+  })
+  inputDesc.addEventListener("keyup", (event) => {
+      if(event.key === "Enter") {
+        exitDescriptionEdit(event.target, true);
+      }
+  })
+
+  const btnToggleForm = document.getElementById("btnToggleForm");
+  btnToggleForm.addEventListener('click', (event) => {
+    showHideForm();
+  })
+
+
+});
+
 
 /**
  * Hide the description and show the text box.
