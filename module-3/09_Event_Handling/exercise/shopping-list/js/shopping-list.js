@@ -20,6 +20,7 @@ const groceries = [
 function setPageTitle() {
   const title = document.getElementById('title');
   title.innerText = pageTitle;
+
 }
 
 /**
@@ -36,3 +37,22 @@ function displayGroceries() {
     ul.appendChild(li);
   });
 }
+document.addEventListener('DOMContentLoaded', () => {
+displayGroceries();
+setPageTitle();
+let GroceryList = document.querySelectorAll('li')
+GroceryList.forEach((itemList) => {
+
+
+itemList.addEventListener("click", (placeHolder) => {
+  itemList.classList.add("completed")
+  itemList.querySelector('i').classList.add("completed")
+} )
+itemList.addEventListener("dblclick", (placeHolder) => {
+  itemList.classList.remove("completed")
+  itemList.querySelector('i').classList.remove("completed")
+})
+
+})
+
+})
