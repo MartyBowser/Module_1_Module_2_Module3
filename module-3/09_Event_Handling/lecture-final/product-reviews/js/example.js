@@ -66,12 +66,14 @@ function calculate(input) {
 }
 */
 
+
 const inputs = document.querySelectorAll("input");
 inputs.forEach(
     (input) => {
 
         //add an event listener to each input
-        input.addEventListener('keyup', (event) => {
+        input.addEventListener('keyup', 
+        (event) => {
 
             //if I want the html element that the event
             //happened to
@@ -83,11 +85,15 @@ inputs.forEach(
             if(event.key === "Enter") {
                 calculateSum();
             }
-        });
+        }
+        );
 
-        input.addEventListener('change', (event) => {
+        input.addEventListener('change', 
+        (myEvent) => {
+            
             calculateSum();
-        })
+        }
+        )
 
         input.addEventListener('focus', (event) => {
             debugger;

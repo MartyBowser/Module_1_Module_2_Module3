@@ -92,14 +92,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
   displayReviews();
 
   const desc = document.querySelector(".description");
-  desc.addEventListener('click', (event) => {
-    toggleDescriptionEdit(event.target);
-  })
+  desc.addEventListener('click', toggleDescriptionEdit)
 
   const inputDesc = document.getElementById("inputDesc")
-  inputDesc.addEventListener("mouseleave", (event) => {
-    exitDescriptionEdit(event.target, false);
-  })
+  inputDesc.addEventListener("mouseleave", callExitDescriptionEdit)
   inputDesc.addEventListener("keyup", (event) => {
       if(event.key === "Enter") {
         exitDescriptionEdit(event.target, true);
@@ -111,16 +107,26 @@ document.addEventListener('DOMContentLoaded', (event) => {
     showHideForm();
   })
 
+  const btnSaveReview = document.getElementById("btnSaveReview");
+  btnSaveReview.addEventListener('click', (event) => {
+    event.preventDefault();
+    saveReview();
+  })
+
 
 });
 
+function callExitDescriptionEdit(event){
+  exitDescriptionEdit(event.target, false);
+}
 
 /**
  * Hide the description and show the text box.
  *
  * @param {Element} desc the element containing the description
  */
-function toggleDescriptionEdit(desc) {
+function toggleDescriptionEdit(event) {
+  const desc = event.target;
   const textBox = desc.nextElementSibling;
   textBox.value = desc.innerText;
   textBox.classList.remove('d-none');
@@ -178,4 +184,28 @@ function resetFormValues() {
 /**
  * Save the review that was added using the add review form.
  */
-function saveReview() {}
+function saveReview() {
+
+  const nameInput = document.getElementById("name");
+  const titleInput = document.getElementById("title");
+  const ratingInput = document.getElementById("rating");
+  const reviewInput = document.getElementById("review");
+
+  let newReview = {
+    reviewer: nameInput.value,
+    title: titleInput.value,
+    review: reviewInput.value,
+    rating: ratingInput.value
+  }
+
+  /*
+  Or we could have created a new object like this:
+  let newReview = {};
+  newReview.reviewer = nameInput.value;
+  */
+
+  reviews.push(newReview);
+  displayReview(newReview);
+  showHideForm();
+
+}
