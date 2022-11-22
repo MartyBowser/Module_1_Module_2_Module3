@@ -11,12 +11,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><input type="text" id="firstNameFilter"/></td>
-        <td><input type="text" id="lastNameFilter"/></td>
-        <td><input type="text" id="usernameFilter"/></td>
-        <td><input type="text" id="emailFilter"/></td>
+        <td><input type="text" id="firstNameFilter" v-model="search.firstName"/></td>
+        <td><input type="text" id="lastNameFilter" v-model="search.lastName"/></td>
+        <td><input type="text" id="usernameFilter" v-model="search.username"/></td>
+        <td><input type="text" id="emailFilter" v-model="search.emailAddress"/></td>
         <td>
-          <select id="statusFilter">
+
+          <select id="statusFilter" v-model="search.status">
             <option value="">Show All</option>
             <option value="Active">Active</option>
             <option value="Inactive">Inactive</option>
@@ -24,15 +25,14 @@
         </td>
       </tr>
       <!-- user listing goes here -->
-      <tr v-for="user in users" v-bind:key="user.emailAddress">
+      <tr v-for="user in users"
+      v-bind:key="user.username"
+      v-bind:class="{inactive: user.status === 'Inactive'}">
         <td>{{user.firstName}}</td>
         <td>{{user.lastName}}</td>
         <td>{{user.username}}</td>
         <td>{{user.emailAddress}}</td>
         <td>{{user.status}}</td>
-        
-
-        
       </tr>
     </tbody>
   </table>
@@ -43,6 +43,14 @@ export default {
   name: 'user-list',
   data() {
     return {
+          search: {
+        firstName:"",
+        lastName:"",
+        username:"",
+        emailAddress:"",
+        status:""
+      },
+
       users: [
         { firstName: 'John', lastName: 'Smith', username: 'jsmith', emailAddress: 'jsmith@gmail.com', status: 'Active' },
         { firstName: 'Anna', lastName: 'Bell', username: 'abell', emailAddress: 'abell@yahoo.com', status: 'Active' },
@@ -51,6 +59,56 @@ export default {
         { firstName: 'Katie', lastName: 'Jackson', username: 'kjackson', emailAddress: 'kjackson@yahoo.com', status: 'Active' },
         { firstName: 'Mark', lastName: 'Smith', username: 'msmith', emailAddress: 'msmith@foo.com', status: 'Inactive' }
       ]
+    }
+  },
+
+computed: {
+    filteredList() {
+      let list = this.users;
+      if(this.search.firstName) {
+        list = list.filter(
+          (currentVal) => {
+            const containsFirstName = currentVal.firstName.toLowerCase().includes(this.search.firstName);
+            return containsFirstName;
+          }
+        );
+      }
+ 
+    if(this.search.lastName) {
+        list = list.filter(
+          (currentVal) => {
+            const containsLastName = currentVal.lastName.toLowerCase().includes(this.search.lastName);
+            return containsLastName;
+          }
+        );
+      }
+ 
+    if(this.search.username) {
+        list = list.filter(
+          (currentVal) => {
+            const containsUsername = currentVal.username.toLowerCase().includes(this.search.username);
+            return containsUsername;
+          }
+        );
+      }
+ 
+    if(this.search.emailAddress) {
+        list = list.filter(
+          (currentVal) => {
+            const containsEmail = currentVal.emailAddress.toLowerCase().includes(this.search.emailAddress);
+            return containsEmail;
+          }
+        );
+      }
+         if(this.search.status) {
+        list = list.filter(
+          (currentVal) => {
+            const containsStatus = currentVal.status.includes(this.search.status);
+            return containsStatus;
+          }
+        );
+      }
+      return list;
     }
   }
 }
