@@ -98,7 +98,9 @@ export default {
   data() {
     return {
       showForm: false,
-      newReview: {rating:0},
+      newReview: {
+        rating:0
+      },
       name: "Ghost Hunting For Dummies",
       description: "Learn how to hunt ghosts like the professionals!",
       reviews : [
