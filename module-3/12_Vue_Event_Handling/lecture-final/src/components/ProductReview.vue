@@ -98,7 +98,7 @@ export default {
   data() {
     return {
       showForm: false,
-      newReview: {},
+      newReview: {rating:0},
       name: "Ghost Hunting For Dummies",
       description: "Learn how to hunt ghosts like the professionals!",
       reviews : [
@@ -138,6 +138,7 @@ export default {
     setRating(value){
       console.log(value);
       this.newReview.rating = Number.parseInt(value);
+      console.log(this.newReview.rating);
     }
   },
   computed: {
