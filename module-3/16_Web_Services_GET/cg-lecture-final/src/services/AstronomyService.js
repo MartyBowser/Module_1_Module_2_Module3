@@ -13,7 +13,7 @@ export default {
     },
 
     getNearEarthObjects(startDate, endDate) {
-        const url = "/neo/rest/v1/feed?start_date="+startDate+"&end_date="+endDate+"&api_key=" + apiKey;
+        const url = `/neo/rest/v1/feed?start_date=${startDate}&end_date=${endDate}&api_key=${apiKey}`;
         return http.get(url)
     }
 

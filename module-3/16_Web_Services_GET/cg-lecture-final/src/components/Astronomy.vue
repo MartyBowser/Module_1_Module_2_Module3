@@ -28,6 +28,7 @@ export default {
         //all the code in here is going to run as soon
         //as the page loads this component
         console.log("Before our service call")
+        
         AstronomyService.getPicOfTheDay().then(
             (response) => {
                 console.log("We received a response")
