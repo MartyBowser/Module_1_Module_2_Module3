@@ -1,7 +1,7 @@
 <template>
   <form v-on:submit.prevent>
     <div class="field">
-      <label for="title">Title</label>
+           <label for="title">Title</label>
       <input type="text" v-model="topic.title" />
     </div>
     <div class="actions">
@@ -9,10 +9,10 @@
     </div>
   </form>
 </template>
-
+ 
 <script>
 import topicService from "../services/TopicService";
-
+ 
 export default {
   name: "create-topic",
   data() {
@@ -24,11 +24,17 @@ export default {
     };
   },
   methods: {
-    saveTopic() {}
+    saveTopic() {
+      topicService.create(this.topic).then((response) => {
+        if (response.status === 201) {
+          this.$router.push("/");
+        }
+      })
+    },
   }
 };
 </script>
-
+ 
 <style>
 form {
   padding: 20px;
